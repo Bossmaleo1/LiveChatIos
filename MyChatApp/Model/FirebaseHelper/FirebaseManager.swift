@@ -30,6 +30,14 @@ class FirebaseManager {
         return cloudFirestore.collection(USERS)
     }
     
+    func userDoc(_ id: String) -> DocumentReference {
+        return usersRef.document(id)
+    }
+    
+    func myId() -> String {
+        return auth.currentUser?.uid ?? ""
+    }
+    
     func logOut() {
         do {
             try auth.signOut()

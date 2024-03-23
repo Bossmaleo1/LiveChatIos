@@ -12,9 +12,7 @@ struct ContentView: View {
     var body: some View {
         if authVM.isFinishedConnecting {
             if authVM.isAuth {
-                Button("Deco") {
-                    self.authVM.manager.logOut()
-                }
+               HomeTabView()
             } else {
                 LoginView(authVM: authVM)
             }
