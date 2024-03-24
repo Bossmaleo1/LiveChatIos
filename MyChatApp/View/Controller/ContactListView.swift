@@ -14,9 +14,11 @@ struct ContactListView: View {
         NavigationView {
             List {
                 ForEach(allUsersVM.users) { appUser in
-                    Text(appUser.fullName)
+                    ContactRow(user: appUser)
                 }
             }
+            .navigationTitle("Contacts")
+            .listStyle(.plain)
         }
     }
 }

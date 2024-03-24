@@ -27,6 +27,7 @@ struct Avatar: View {
             if let urlString = user?._imageUrl, let url = URL(string: urlString) {
                 WebImage(url: url)
                     .resizable()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: size, height: size, alignment: .center)
                     .clipShape(Circle())
             } else {

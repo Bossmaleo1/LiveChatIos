@@ -58,6 +58,7 @@
 		59DA66092BB034F6008E535E /* PHPickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA66082BB034F6008E535E /* PHPickerRepresentable.swift */; };
 		59DA660C2BB0698A008E535E /* AllUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA660B2BB0698A008E535E /* AllUsersViewModel.swift */; };
 		59DA66102BB06C1D008E535E /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA660F2BB06C1D008E535E /* ContactListView.swift */; };
+		59DA66122BB06F11008E535E /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA66112BB06F11008E535E /* ContactRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		59DA660A2BB04252008E535E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		59DA660B2BB0698A008E535E /* AllUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersViewModel.swift; sourceTree = "<group>"; };
 		59DA660F2BB06C1D008E535E /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		59DA66112BB06F11008E535E /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				59057B292BAF01AD003C1EC6 /* SettingsRow.swift */,
+				59DA66112BB06F11008E535E /* ContactRow.swift */,
 			);
 			path = Row;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				59057B1A2BAEEE31003C1EC6 /* FirebaseConstants.swift in Sources */,
 				59057B272BAEFE72003C1EC6 /* RemplacementAvatar.swift in Sources */,
 				59DA660C2BB0698A008E535E /* AllUsersViewModel.swift in Sources */,
+				59DA66122BB06F11008E535E /* ContactRow.swift in Sources */,
 				59CE15632B9577A6002322F7 /* ContentView.swift in Sources */,
 				59057B202BAEF84E003C1EC6 /* HomeTabView.swift in Sources */,
 				59DA66072BB034D9008E535E /* ImagePickerRepresentable.swift in Sources */,
