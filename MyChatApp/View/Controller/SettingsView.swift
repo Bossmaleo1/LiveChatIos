@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @StateObject var userVM: UserViewModel
+    @State var prenom : String = ""
+    @State var nom: String = ""
     
     var body: some View {
         NavigationView {
@@ -31,11 +33,44 @@ struct SettingsView: View {
                         
                         //Spacer(minLength: 80)
                     }
-                    Avatar(size: 80).padding(.horizontal)
+                    Avatar(user: userVM.user,size: 80).padding(.horizontal)
                 }
                 Divider()
                 List {
                     Section("Informations") {
+                        HStack {
+                            TextField(userVM.user?.givenName ?? "Prénom", text: $prenom)
+                                .textFieldStyle(.roundedBorder)
+                            Button {
+                                if self.prenom != "" {
+                                    userVM.manager.updateUser(key: GIVEN_NAME, value: self.prenom)
+                                }
+                                self.prenom = ""
+                            } label: {
+                                Image(systemName: "plus")
+                                    .padding(3)
+                                    .foregroundColor(.primary)
+                                    .background(Color.secondary.opacity(0.4))
+                                    .clipShape(Circle())
+                            }
+                        }
+                        
+                        HStack {
+                            TextField(userVM.user?.name ?? "Nom", text: $nom)
+                                .textFieldStyle(.roundedBorder)
+                            Button {
+                                if self.nom != "" {
+                                    userVM.manager.updateUser(key: NAME, value: self.nom)
+                                }
+                                self.nom = ""
+                            } label: {
+                                Image(systemName: "plus")
+                                    .padding(3)
+                                    .foregroundColor(.primary)
+                                    .background(Color.secondary.opacity(0.4))
+                                    .clipShape(Circle())
+                            }
+                        }
                         
                     }
                     Section("Réglages de l'app") {

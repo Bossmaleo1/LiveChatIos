@@ -54,6 +54,8 @@
 		59CE159A2B958137002322F7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 59CE15992B958137002322F7 /* FirebaseDatabase */; };
 		59CE159C2B958137002322F7 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 59CE159B2B958137002322F7 /* FirebaseFirestore */; };
 		59CE15A02B958627002322F7 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CE159F2B958627002322F7 /* AuthViewModel.swift */; };
+		59DA66072BB034D9008E535E /* ImagePickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA66062BB034D9008E535E /* ImagePickerRepresentable.swift */; };
+		59DA66092BB034F6008E535E /* PHPickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA66082BB034F6008E535E /* PHPickerRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		59CE158A2B9578B6002322F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59CE15922B957D94002322F7 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		59CE159F2B958627002322F7 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		59DA66062BB034D9008E535E /* ImagePickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerRepresentable.swift; sourceTree = "<group>"; };
+		59DA66082BB034F6008E535E /* PHPickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerRepresentable.swift; sourceTree = "<group>"; };
+		59DA660A2BB04252008E535E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +207,7 @@
 		59CE155F2B9577A6002322F7 /* MyChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				59DA660A2BB04252008E535E /* Info.plist */,
 				59CE159E2B958611002322F7 /* View */,
 				59CE159D2B9585FF002322F7 /* ViewModel */,
 				59CE15902B957D6E002322F7 /* Model */,
@@ -268,11 +274,21 @@
 		59CE159E2B958611002322F7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				59DA66052BB03481008E535E /* Representables */,
 				59057B282BAF0198003C1EC6 /* Row */,
 				59057B232BAEFDCC003C1EC6 /* Elements */,
 				59974DBF2BA84400001C9D35 /* Controller */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		59DA66052BB03481008E535E /* Representables */ = {
+			isa = PBXGroup;
+			children = (
+				59DA66062BB034D9008E535E /* ImagePickerRepresentable.swift */,
+				59DA66082BB034F6008E535E /* PHPickerRepresentable.swift */,
+			);
+			path = Representables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,10 +462,12 @@
 				59057B222BAEF98C003C1EC6 /* SettingsView.swift in Sources */,
 				59CE15932B957D94002322F7 /* FirebaseManager.swift in Sources */,
 				59057B252BAEFDFC003C1EC6 /* Avatar.swift in Sources */,
+				59DA66092BB034F6008E535E /* PHPickerRepresentable.swift in Sources */,
 				59057B1A2BAEEE31003C1EC6 /* FirebaseConstants.swift in Sources */,
 				59057B272BAEFE72003C1EC6 /* RemplacementAvatar.swift in Sources */,
 				59CE15632B9577A6002322F7 /* ContentView.swift in Sources */,
 				59057B202BAEF84E003C1EC6 /* HomeTabView.swift in Sources */,
+				59DA66072BB034D9008E535E /* ImagePickerRepresentable.swift in Sources */,
 				59057B2A2BAF01AD003C1EC6 /* SettingsRow.swift in Sources */,
 				59974DC12BA849FA001C9D35 /* LoginView.swift in Sources */,
 				59CE15612B9577A6002322F7 /* MyChatAppApp.swift in Sources */,
@@ -619,6 +637,9 @@
 				DEVELOPMENT_TEAM = V654JCM75F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyChatApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Prendre photo";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Aller sur librairie";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -648,6 +669,9 @@
 				DEVELOPMENT_TEAM = V654JCM75F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyChatApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Prendre photo";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Aller sur librairie";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
