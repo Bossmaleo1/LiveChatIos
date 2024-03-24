@@ -56,6 +56,8 @@
 		59CE15A02B958627002322F7 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CE159F2B958627002322F7 /* AuthViewModel.swift */; };
 		59DA66072BB034D9008E535E /* ImagePickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA66062BB034D9008E535E /* ImagePickerRepresentable.swift */; };
 		59DA66092BB034F6008E535E /* PHPickerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA66082BB034F6008E535E /* PHPickerRepresentable.swift */; };
+		59DA660C2BB0698A008E535E /* AllUsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA660B2BB0698A008E535E /* AllUsersViewModel.swift */; };
+		59DA66102BB06C1D008E535E /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DA660F2BB06C1D008E535E /* ContactListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		59DA66062BB034D9008E535E /* ImagePickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerRepresentable.swift; sourceTree = "<group>"; };
 		59DA66082BB034F6008E535E /* PHPickerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPickerRepresentable.swift; sourceTree = "<group>"; };
 		59DA660A2BB04252008E535E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		59DA660B2BB0698A008E535E /* AllUsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUsersViewModel.swift; sourceTree = "<group>"; };
+		59DA660F2BB06C1D008E535E /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,7 @@
 				59974DC02BA849FA001C9D35 /* LoginView.swift */,
 				59057B1F2BAEF84E003C1EC6 /* HomeTabView.swift */,
 				59057B212BAEF98C003C1EC6 /* SettingsView.swift */,
+				59DA660F2BB06C1D008E535E /* ContactListView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			children = (
 				59CE159F2B958627002322F7 /* AuthViewModel.swift */,
 				59057B2B2BAF08DD003C1EC6 /* UserViewModel.swift */,
+				59DA660B2BB0698A008E535E /* AllUsersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -461,10 +467,12 @@
 				59057B2C2BAF08DD003C1EC6 /* UserViewModel.swift in Sources */,
 				59057B222BAEF98C003C1EC6 /* SettingsView.swift in Sources */,
 				59CE15932B957D94002322F7 /* FirebaseManager.swift in Sources */,
+				59DA66102BB06C1D008E535E /* ContactListView.swift in Sources */,
 				59057B252BAEFDFC003C1EC6 /* Avatar.swift in Sources */,
 				59DA66092BB034F6008E535E /* PHPickerRepresentable.swift in Sources */,
 				59057B1A2BAEEE31003C1EC6 /* FirebaseConstants.swift in Sources */,
 				59057B272BAEFE72003C1EC6 /* RemplacementAvatar.swift in Sources */,
+				59DA660C2BB0698A008E535E /* AllUsersViewModel.swift in Sources */,
 				59CE15632B9577A6002322F7 /* ContentView.swift in Sources */,
 				59057B202BAEF84E003C1EC6 /* HomeTabView.swift in Sources */,
 				59DA66072BB034D9008E535E /* ImagePickerRepresentable.swift in Sources */,
