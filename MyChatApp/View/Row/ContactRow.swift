@@ -11,7 +11,8 @@ struct ContactRow: View {
     var user: AppUser
     var body: some View {
         NavigationLink {
-            Text(user.fullName)
+            let vm = MessageViewModel(user: user)
+            ChatMessageListView(messageVM: vm)
         } label: {
             HStack(alignment: .top) {
                 Avatar(user: user, size: 50)

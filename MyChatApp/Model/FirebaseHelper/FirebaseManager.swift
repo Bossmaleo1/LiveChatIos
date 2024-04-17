@@ -30,12 +30,20 @@ class FirebaseManager {
         return cloudFirestore.collection(USERS)
     }
     
+    var messagesRef: CollectionReference {
+        return cloudFirestore.collection(MESSAGES)
+    }
+    
     var storageBase: StorageReference {
         return storage.reference()
     }
     
     var storageProfilePics: StorageReference {
         return storageBase.child(USERS)
+    }
+    
+    var storageMessages: StorageReference {
+        return storageBase.child(MESSAGES)
     }
     
     func userDoc(_ id: String) -> DocumentReference {
@@ -69,41 +77,64 @@ class FirebaseManager {
     }
     
     func updateProfilePicture(image: UIImage?) {
-        uploadProfilePicture(image: image) { imageUrl in
+        guard let image = image else { return }
+        guard let data = image.jpegData(compressionQuality: 0.25) else { return }
+        guard let currentId = getId() else { return }
+        let ref = storageProfilePics.child(currentId)
+        uploadPicture(ref: ref, data: data) { imageUrl in
             if let url = imageUrl {
                 self.updateUser(key: IMAGE_URL, value: url)
             }
-            
         }
     }
     
-    func uploadProfilePicture(image: UIImage?, completion: @escaping (String?) -> Void) {
-        if let image = image {
-            if let data = image.jpegData(compressionQuality: 0.25) {
-                if let currentId = getId() {
-                    let path = storageProfilePics.child(currentId)
-                    path.putData(data, metadata: nil) { storage, error in
-                        if let error = error {
-                            completion(nil)
-                        }
-                        if let _ = storage {
-                            path.downloadURL { url, error in
-                                if let error = error {
-                                    completion(nil)
-                                }
-                                completion(url?.absoluteString)
-                            }
-                        }
-                    }
-                } else {
-                    completion(nil)
-                }
-            } else {
+    func addImagetoChat(image: UIImage?, completion: @escaping (String?) -> Void) {
+        guard let image = image else { completion(nil); return }
+        guard let data = image.jpegData(compressionQuality: 0.25) else { completion(nil); return }
+        guard let id = getId() else { return }
+        let ref = storageMessages.child(id).child(String(Date().timeIntervalSince1970))
+        uploadPicture(ref: ref, data: data) { urlString in
+            completion(urlString)
+        }
+    }
+    
+    func setUpPathForMessage(from: String, to: String) -> CollectionReference {
+        let array = [from, to]
+        let sortedArray = array.sorted(by: {$0 < $1})
+        let first = sortedArray[0]
+        let second = sortedArray[1]
+        let ref = messagesRef.document(first).collection(second)
+        return ref
+    }
+    
+    func sendMessage(from: String, to: String, dict: [String:Any], image: UIImage?) {
+        var newDict = dict
+        let newDocument = setUpPathForMessage(from: from, to: to).document()
+        addImagetoChat(image: image) { url in
+            if let urlstring = url {
+                newDict[IMAGE_URL] = urlstring
+            }
+            newDocument.setData(newDict)
+        }
+    }
+    
+    func uploadPicture(ref: StorageReference,data: Data, completion: @escaping (String?) -> Void) {
+        ref.putData(data, metadata: nil) { storage, error in
+            if let error = error {
+                print(error)
                 completion(nil)
             }
-        } else {
-            completion(nil)
+            if let _ = storage {
+                ref.downloadURL { url, error in
+                    if let error = error {
+                        print(error)
+                        completion(nil)
+                    }
+                    completion(url?.absoluteString)
+                }
+            }
         }
+        
     }
     
 }
